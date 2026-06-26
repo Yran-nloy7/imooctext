@@ -62,15 +62,18 @@
       </vee-form>
 
       <div class="flex justify-around mt-4">
-        <!-- QQ -->
-        <qq-login-vue></qq-login-vue>
-        <!-- 微信 -->
-        <wx-login-vue></wx-login-vue>
+        <!-- QQ — 演示模式 -->
+        <qq-login-vue @demoLogin="onDemoLogin"></qq-login-vue>
+        <!-- 微信 — 演示模式 -->
+        <wx-login-vue @demoLogin="onDemoLogin"></wx-login-vue>
       </div>
+      <p class="text-center text-xs text-zinc-300 dark:text-zinc-500 mt-2">
+        * QQ/微信登录需真实 AppID，当前为演示模式
+      </p>
 
       <!-- 演示模式：一键登录 -->
-      <div class="mt-4 pt-3 border-t border-zinc-200 dark:border-zinc-700">
-        <p class="text-xs text-zinc-400 mb-2">演示环境，无需账号密码</p>
+      <div class="mt-3 pt-3 border-t border-zinc-200 dark:border-zinc-700">
+        <p class="text-xs text-zinc-400 mb-2">跳过注册，直接体验全部功能</p>
         <m-button
           class="w-full"
           type="info"
