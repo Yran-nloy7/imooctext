@@ -62,14 +62,11 @@
       </vee-form>
 
       <div class="flex justify-around mt-4">
-        <!-- QQ — 演示模式 -->
-        <qq-login-vue @demoLogin="onDemoLogin"></qq-login-vue>
-        <!-- 微信 — 演示模式 -->
-        <wx-login-vue @demoLogin="onDemoLogin"></wx-login-vue>
+        <!-- QQ -->
+        <qq-login-vue></qq-login-vue>
+        <!-- 微信 -->
+        <wx-login-vue></wx-login-vue>
       </div>
-      <p class="text-center text-xs text-zinc-300 dark:text-zinc-500 mt-2">
-        * QQ/微信登录需真实 AppID，当前为演示模式
-      </p>
 
       <!-- 演示模式：一键登录 -->
       <div class="mt-3 pt-3 border-t border-zinc-200 dark:border-zinc-700">
