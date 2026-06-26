@@ -21,8 +21,8 @@ module.exports = {
         'l-zinc': '-10px 0 10px #18181b'
       },
       colors: {
-        main: '#f44c58',
-        'hover-main': '#f32836',
+        main: '#FF2442',
+        'hover-main': '#e01f3a',
         'success-100': '#F2F9EC',
         'success-200': '#E4F2DB',
         'success-300': '#7EC050',

@@ -67,6 +67,19 @@
         <!-- 微信 -->
         <wx-login-vue></wx-login-vue>
       </div>
+
+      <!-- 演示模式：一键登录 -->
+      <div class="mt-4 pt-3 border-t border-zinc-200 dark:border-zinc-700">
+        <p class="text-xs text-zinc-400 mb-2">演示环境，无需账号密码</p>
+        <m-button
+          class="w-full"
+          type="info"
+          :loading="demoLoading"
+          @click="onDemoLogin"
+        >
+          一键演示登录
+        </m-button>
+      </div>
     </div>
     <!-- 人类行为验证模块 -->
     <slider-captcha-vue
@@ -96,6 +109,7 @@ import { ref } from 'vue'
 import { useStore } from 'vuex'
 import { useRouter } from 'vue-router'
 import { LOGIN_TYPE_USERNAME } from '@/constants'
+import { message } from '@/libs'
 import qqLoginVue from './qq-login.vue'
 import wxLoginVue from './weixin-login.vue'
 
@@ -152,6 +166,32 @@ const onToRegister = () => {
   // 配置跳转方式
   store.commit('app/changeRouterType', 'push')
   router.push('/register')
+}
+
+/**
+ * 演示登录：绕过真实API，直接注入 mock token 和用户信息
+ */
+const demoLoading = ref(false)
+const onDemoLogin = () => {
+  demoLoading.value = true
+  // 模拟网络延迟
+  setTimeout(() => {
+    store.commit('user/setToken', 'demo-token-nicnote-2026')
+    store.commit('user/setUserInfo', {
+      username: 'NicNote用户',
+      nickname: 'NicNote用户',
+      avatar:
+        'https://api.dicebear.com/7.x/avataaars/svg?seed=nicnote',
+      title: '生活分享家',
+      company: 'NicNote',
+      homePage: 'https://nicnote.app',
+      introduction: '在 NicNote 发现美好生活 ✨',
+      vipLevel: 0
+    })
+    demoLoading.value = false
+    message('success', '🎉 欢迎来到 NicNote！当前为演示模式', 4000)
+    router.push('/')
+  }, 800)
 }
 </script>
 

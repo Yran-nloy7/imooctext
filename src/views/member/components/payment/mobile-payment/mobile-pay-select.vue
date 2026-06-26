@@ -15,7 +15,8 @@
 </template>
 
 <script setup>
-import { alipay } from '@/utils/pay'
+import { message } from '@/libs'
+import { useRouter } from 'vue-router'
 
 const props = defineProps({
   payData: {
@@ -24,7 +25,12 @@ const props = defineProps({
   }
 })
 
+const router = useRouter()
 const onAlipay = () => {
-  alipay(props.payData.title, props.payData.desc)
+  // 演示模式：跳过真实支付宝，直接跳转支付成功页
+  message('success', '演示模式：正在模拟支付...', 2000)
+  setTimeout(() => {
+    router.push('/pay/result')
+  }, 1500)
 }
 </script>

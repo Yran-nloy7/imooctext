@@ -12,7 +12,7 @@
 <script>
 // QQ 登录的 URL
 const QQ_LOGIN_URL =
-  'https://graph.qq.com/oauth2.0/authorize?client_id=101998494&response_type=token&scope=all&redirect_uri=https%3A%2F%2Fimooc-front.lgdsunday.club%2Flogin'
+  'https://graph.qq.com/oauth2.0/authorize?client_id=101998494&response_type=token&scope=all&redirect_uri=https%3A%2F%2Fnicnote.app%2Flogin'
 </script>
 
 <script setup>

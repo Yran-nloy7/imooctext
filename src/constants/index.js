@@ -3,32 +3,32 @@ export const PC_DEVICE_WIDTH = 1280
 // category 的本地构建数据
 export const ALL_CATEGORY_ITEM = {
   id: 'all',
-  name: '全部'
+  name: '推荐'
 }
 // 初始 category 数据
 export const CATEGORY_NOMAR_DATA = [
   ALL_CATEGORY_ITEM,
-  { id: 'web_app_icon', name: 'UI/UX' },
-  { id: 'design', name: '平面' },
-  { id: 'illustration', name: '插画/漫画' },
-  { id: 'photography', name: '摄影' },
-  { id: 'games', name: '游戏' },
-  { id: 'anime', name: '动漫' },
+  { id: 'web_app_icon', name: '时尚穿搭' },
+  { id: 'design', name: '美妆护肤' },
+  { id: 'illustration', name: '美食探店' },
+  { id: 'photography', name: '旅行攻略' },
+  { id: 'games', name: '家居装修' },
+  { id: 'anime', name: '健身运动' },
   {
     id: 'industrial_design',
-    name: '工业设计'
+    name: '读书成长'
   },
   {
-    id: 'industrial_design',
-    name: '建筑设计'
+    id: 'design',
+    name: '数码好物'
   },
   {
-    id: 'industrial_design',
-    name: '人文艺术'
+    id: 'illustration',
+    name: '宠物日常'
   },
   {
-    id: 'industrial_design',
-    name: '家居/家装'
+    id: 'photography',
+    name: '母婴亲子'
   }
 ]
 // 暗黑主题

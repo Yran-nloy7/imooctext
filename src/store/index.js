@@ -19,7 +19,7 @@ const store = createStore({
   plugins: [
     createPersistedState({
       // 保存到 localStorage 中的 key
-      key: 'imooc-front',
+      key: 'nicnote',
       // 需要保存的模块
       paths: ['category', 'theme', 'search', 'user']
     })

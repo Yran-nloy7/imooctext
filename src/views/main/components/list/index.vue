@@ -56,6 +56,25 @@ const isLoading = ref(false)
 const isFinished = ref(false)
 // 数据源
 const pexelsList = ref([])
+
+/**
+ * 为数据注入模拟的点赞数和收藏数
+ * 点赞：0 ~ 100000 随机
+ * 收藏：远低于点赞，约为点赞数的 0.5% ~ 8%
+ */
+const injectSocialCounts = (list) => {
+  list.forEach((item) => {
+    if (item._likeCount === undefined) {
+      const likeCount = Math.floor(Math.random() * 100001)
+      // 收藏数远低于点赞：取点赞的 0.5%~8%，更真实
+      const saveRatio = 0.005 + Math.random() * 0.075
+      const saveCount = Math.floor(likeCount * saveRatio)
+      item._likeCount = likeCount
+      item._saveCount = saveCount
+    }
+  })
+}
+
 /**
  * 加载数据的方法
  */
@@ -72,6 +91,8 @@ const getPexelsData = async () => {
 
   // 触发接口请求
   const res = await getPexelsList(query)
+  // 注入模拟社交数据
+  injectSocialCounts(res.list)
   // 初始请求清空数据源
   if (query.page === 1) {
     pexelsList.value = res.list
