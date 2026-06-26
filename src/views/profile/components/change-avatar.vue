@@ -49,10 +49,8 @@ import { isMobileTerminal } from '@/utils/flexible'
 import Cropper from 'cropperjs'
 import 'cropperjs/dist/cropper.css'
 import { ref, onMounted } from 'vue'
-import { getOSSClient } from '@/utils/sts'
 import { message } from '@/libs'
 import { useStore } from 'vuex'
-import { putProfile } from '@/api/sys'
 
 defineProps({
   blob: {
